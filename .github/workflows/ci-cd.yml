@@ -64,15 +64,18 @@ jobs:
           pip install safety bandit
 
       - name: Check for known vulnerabilities
+        working-directory: ./app
         run: |
           cd app
           safety check -r requirements.txt --json > safety-report.json || true
 
       - name: Static security analysis
+        working-directory: ./app
         run: |
           cd app
           bandit -r . -f json -o bandit-report.json || true
 
       - name: Evaluate security results
+        working-directory: ./app
         run: |
           python scripts/evaluate-security.py
