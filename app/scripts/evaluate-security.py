@@ -17,7 +17,7 @@ def evaluate_security_results():
                     critical_issues += len(
                         [v for v in safety_data if "vulnerability" in str(v).lower()]
                     )
-            except:
+            except Exception:
                 pass
 
     # Check Bandit results
@@ -32,7 +32,7 @@ def evaluate_security_results():
                         if r.get("issue_severity") == "HIGH"
                     ]
                     critical_issues += len(high_issues)
-            except:
+            except Exception:
                 pass
 
     print(f"Found {critical_issues} critical security issues")
