@@ -4,6 +4,7 @@ import sys
 import argparse
 import time
 
+
 def run_smoke_tests(environment):
     print(f"🧪 Running smoke tests against {environment} environment...")
     tests = [
@@ -24,6 +25,7 @@ def run_smoke_tests(environment):
     else:
         print("❌ Some smoke tests failed!")
         return False
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

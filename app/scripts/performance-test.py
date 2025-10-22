@@ -3,6 +3,7 @@ import argparse
 import time
 import random
 
+
 def run_performance_test(duration, environment):
     print(f"🚀 Running performance test for {duration}s against {environment}")
     for i in range(duration // 10):
@@ -11,6 +12,7 @@ def run_performance_test(duration, environment):
         time.sleep(10)
     print("✅ Performance test completed - within acceptable limits")
     return True
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
