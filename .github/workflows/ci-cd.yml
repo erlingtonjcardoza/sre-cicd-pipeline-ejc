@@ -127,10 +127,12 @@ jobs:
 
       - name: Run smoke tests
         run: |
+          cd app
           python scripts/smoke-tests.py --environment=staging
 
       - name: Performance baseline test
         run: |
+          cd app
           python scripts/performance-test.py --duration=30 --environment=staging
 
   deploy-production:
